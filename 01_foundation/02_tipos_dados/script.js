@@ -14,6 +14,9 @@ console.log(typeof simbolo)
 var sobrenome = "Abraão"
 var nomeCompleto = nome + " " + sobrenome
 console.log(nomeCompleto)
+var nomeCompleto2 = `${nome} ${sobrenome}`
+console.log(nomeCompleto2)
+console.log(typeof nomeCompleto2)
 
 // number
 
@@ -26,7 +29,11 @@ console.log(ano + mes)
 var frase = "Esse é o \"melhor\" jogo!"
 console.log(frase)
 
-var frase2 = "It's time! " + ano
+var frase2 = "It\'s time! " + ano
 console.log(frase2)
 
 console.log(typeof frase2)
+
+// hoisting
+console.log(idade2) //undefined
+var idade2 = 13
