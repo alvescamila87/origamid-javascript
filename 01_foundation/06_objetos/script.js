@@ -37,3 +37,35 @@ console.log(quadrado.imprimirNome())
 // Math
 
 console.log(Math.random())
+
+// objetos 2
+
+var menu = {
+    width: 900,
+    height: 50,
+    backgroundColor: '#84E'
+}
+
+// dot notation get: acessar valores
+console.log(menu.backgroundColor)
+
+// dot notation set: alterar valores
+var bg = menu.backgroundColor
+console.log(bg)
+
+//setar valores
+menu.backgroundColor = "#000"
+
+console.log(menu.backgroundColor)
+
+// adicionar novas propriedades
+menu.color = "Blue"
+console.log(menu.color)
+
+// adicionar funções 
+
+menu.esconder = function() {
+    console.log('Escondi')
+}
+
+console.log(menu.esconder())
