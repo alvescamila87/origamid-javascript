@@ -128,4 +128,40 @@ carro.preco = 3000;
     }
   }
   
-  
+  // tudo é objeto
+  var nome = 'Camila'
+  var novoNome = nome.replace('amila', 'atarina')
+  console.log(nome)
+  console.log(novoNome)
+
+  nome.length
+  nome.charAt(3)
+  var nomeMinusculo = nome.toLowerCase()
+  console.log(nomeMinusculo)
+
+// DOM
+
+var botao = document.querySelector('.btn')
+
+
+// exercícios 3:
+ 
+// nomeie 3 propriedades ou métodos de strings
+var passaro = 'Papagaio'
+console.log(passaro.charAt(3))
+
+var passaroMinusculo = passaro.toLowerCase()
+console.log(passaroMinusculo)
+
+console.log(passaro.length)
+console.log("SLICE: ", passaro.slice(0-3))
+
+// nomeie 5 propriedades ou métodos de elementos do DOM
+// botao.addEventListener
+// botao.innerHTML
+// botao.id
+// botao.appendChild
+// botao.outerHTML
+
+// busque na web um objeto (método) capaz de interagir com o clipboard, 
+// clipboard é a parte do seu computador que lida com o CTRL + C e CTRL + V

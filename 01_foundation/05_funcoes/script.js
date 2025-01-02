@@ -138,4 +138,4 @@ function precisoVisitar(paisesVisitados) {
   }
   precisoVisitar(20);
   //jaVisitei(20);
-  
+
