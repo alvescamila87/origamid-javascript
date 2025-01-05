@@ -48,3 +48,55 @@ console.log("último p: ", ultimoParagrafo)
 const paragrafos = document.querySelectorAll('p')
 console.log('último p2: ', paragrafos[paragrafos.length -1])
 
+
+// for each and arrow function
+
+paragrafos.forEach(function(item, index, array) {
+    console.log("Item for each", item, index, array)
+})
+
+// array like - htmlCollection
+const titulos = document.getElementsByClassName('titulo') // html collection
+const titulosArray = Array.from(titulos) // transforma em array para poder acessar o método forEach
+
+titulosArray.forEach(function(item) {
+    console.log("Array like: ", item)
+})
+
+// arrow function: encurtamento de function expression
+paragrafos.forEach(item => {
+    console.log("arrow function: ", item)
+})
+
+let i = 0;
+paragrafos.forEach(() => {
+    i < 10 ? i++ : "Acabou"
+    console.log("i: ", i)
+})
+
+// versões curtas:
+paragrafos.forEach(() => console.log(i))
+paragrafos.forEach(function() {console.log(i++)})
+
+// exercicios:
+
+// Mostre no console cada parágrado do site
+paragrafos.forEach((item, index) => console.log("Parágrafo ", index, " -> ", item))
+
+// Mostre o texto dos parágrafos no console
+paragrafos.forEach(item => console.log("Textos de paragrafos: ", item.innerText))
+
+// Como corrigir os erros abaixo:
+const imgs = document.querySelectorAll('img');
+
+imgs.forEach((item, index) => {
+  console.log(item, index);
+});
+
+let y = 0;
+imgs.forEach(()=> {
+  console.log(y++);
+});
+
+imgs.forEach(() => y++);
+
