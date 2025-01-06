@@ -99,4 +99,3 @@ imgs.forEach(()=> {
 });
 
 imgs.forEach(() => y++);
-
