@@ -44,3 +44,12 @@ lista.querySelectorAll('li'); // todas as LI's
 lista.querySelector('li:last-child'); // último filho
 
 
+const lista2 = document.querySelector('.animais-lista');
+
+lista2.previousElementSibling; // elemento acima
+lista2.previousSibling; // node acima
+
+lista2.firstChild; // primeiro node child
+lista2.childNodes; // todos os node child
+
+console.log("Node ", lista2.childNodes)
