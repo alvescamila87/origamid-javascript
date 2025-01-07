@@ -110,3 +110,78 @@ function keyboard(e) {
 }
 
 window.addEventListener('keydown', keyboard)
+
+// for each em eventos
+
+const imgs = document.querySelectorAll('img')
+
+function mostrarMensagem(e) {
+  console.log('Imagem: ', e.target.getAttribute('src'), ' adicionada ao elemento.')
+}
+
+imgs.forEach(item => {
+  item.addEventListener('click', mostrarMensagem)
+})
+
+// exercicios
+
+// Quando o usuário clicar nos links internos do site,
+// adicione a classe ativo ao item clicado e remova dos
+// demais itens caso eles possuam a mesma. Previna
+// o comportamento padrão desses links
+
+const linksInternos = document.querySelectorAll('a[href^="#"')
+console.log("Links internos: ", linksInternos)
+
+function handleClickParaAtivar(e) { 
+  e.preventDefault()   
+  linksInternos.forEach(link => {
+    link.classList.remove('ativo')
+  })
+  e.currentTarget.classList.add(`ativo`)
+
+}
+
+linksInternos.forEach(item => {
+  console.log("Item de link interno", item)
+  item.addEventListener('click', handleClickParaAtivar)
+})
+
+// Selecione todos os elementos do site começando a partir do body,
+// ao clique mostre exatamente quais elementos estão sendo clicados
+
+const elementos = document.querySelectorAll('*')
+console.log("Elementos: ", elementos)
+
+function mostrarElemento(e) {
+  console.log("Elemento clicado: ", e.target, e.currentTarget)
+}
+
+elementos.forEach(elemento => {
+  elemento.addEventListener('click', mostrarElemento)
+})
+
+// Utilizando o código anterior, ao invés de mostrar no console,
+// remova o elemento que está sendo clicado, o método remove() remove um elemento
+
+function removeClasse(e) {
+  console.log("Remove: ", e.target.remove())
+}
+
+elementos.forEach(item => {
+  item.addEventListener('click', removeClasse)
+})
+
+
+// Se o usuário clicar na tecla (t), aumente todo o texto do site. 
+
+function aumentarFonte(e) {
+  console.log("key: ", e.key)
+  if(e.key === 't') {
+    document.documentElement.classList.toggle('html.textomaior')    
+  }
+}
+
+elementos.forEach(item => {
+  item.addEventListener('keydown', aumentarFonte)
+})
