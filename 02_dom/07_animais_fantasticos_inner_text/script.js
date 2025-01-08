@@ -53,3 +53,66 @@ lista2.firstChild; // primeiro node child
 lista2.childNodes; // todos os node child
 
 console.log("Node ", lista2.childNodes)
+
+// manipulação
+
+const lista3 = document.querySelector('.animais-lista');
+const contato = document.querySelector('.contato');
+const titulo = contato.querySelector('.titulo');
+
+contato.appendChild(lista3); // move lista para o final de contato
+contato.insertBefore(lista3, titulo); // insere a lista antes de titulo
+contato.removeChild(titulo); // remove titulo de contato
+//contato.replaceChild(lista3, titulo); // substitui titulo por lista
+
+// criação de elementos
+
+const mapa = document.querySelector('.mapa')
+
+const novoH1 = document.createElement('h1');
+novoH1.innerHTML = "Fantastic animals"
+novoH1.classList.add('titulo2')
+
+mapa.appendChild(novoH1)
+
+console.log("Novo h1: ", novoH1)
+
+// clonar de elementos
+
+const titulo1 = document.querySelector('h1');
+const titulo2 = document.querySelector('h1');
+const novoTitulo = titulo1;
+// titulo, titulo2 e novoTitulo são iguais
+
+const cloneTitulo = titulo.cloneNode(true);
+const contato2 = document.querySelector('.contato');
+contato.appendChild(cloneTitulo);
+
+// clonar de elementos
+
+const outroh1 = document.querySelector('h1')
+const faq = document.querySelector('.faq')
+
+const cloneH1 = outroh1.cloneNode(true)
+
+// mover h1
+faq.appendChild(outroh1)
+
+// clonar h1
+faq.appendChild(cloneH1)
+
+// exercicios
+
+// Duplique o menu e adicione ele em copy
+const menu = document.querySelector('.menu')
+const copy = document.querySelector('.copy')
+
+const cloneMenu = menu.cloneNode(true)
+
+copu.appendChild(cloneMenu)
+
+// Selecione o primeiro DT da dl de Faq
+
+// Selecione o DD referente ao primeiro DT
+
+// Substitua o conteúdo html de .faq pelo de .animais
