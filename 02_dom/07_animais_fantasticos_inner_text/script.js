@@ -104,15 +104,26 @@ faq.appendChild(cloneH1)
 // exercicios
 
 // Duplique o menu e adicione ele em copy
-const menu = document.querySelector('.menu')
+const menu2 = document.querySelector('.menu')
 const copy = document.querySelector('.copy')
 
-const cloneMenu = menu.cloneNode(true)
+const cloneMenu = menu2.cloneNode(true)
 
-copu.appendChild(cloneMenu)
+copy.appendChild(cloneMenu)
 
 // Selecione o primeiro DT da dl de Faq
+const faq3 = document.querySelector('.faq')
+const primeiroDt = faq3.querySelector('dt')
 
 // Selecione o DD referente ao primeiro DT
+const primeiroDd = primeiroDt.nextElementSibling;
+
+primeiroDd.remove();
+
+console.log(primeiroDd)
 
 // Substitua o conteúdo html de .faq pelo de .animais
+const animais4 = document.querySelector('.animais')
+const faq4 = document.querySelector('.faq')
+
+faq4.innerHTML = animais4.innerHTML
