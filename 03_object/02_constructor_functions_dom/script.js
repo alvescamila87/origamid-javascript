@@ -1,50 +1,50 @@
-// //construction functions 02
-// const Dom = {
-//     seletor: "li",
-//     //elemento() {}
-//     elemento: function() {
-//         //console.log(this.seletor)
-//         //const elementoSelecionado = document.querySelector(this.seletor)
-//         //console.log(elementoSelecionado)
-//         return document.querySelector(this.seletor);
-//     },
-//     ativar() {
-//         const elementoSelecionado = this.elemento();
-//         elementoSelecionado.classList.add('ativar');
-//         // ou assim: this.element().classList.add('ativar');
-//     }
-// }
+//construction functions 02
+const Dom = {
+    seletor: "li",
+    //elemento() {}
+    elemento: function() {
+        //console.log(this.seletor)
+        //const elementoSelecionado = document.querySelector(this.seletor)
+        //console.log(elementoSelecionado)
+        return document.querySelector(this.seletor);
+    },
+    ativar() {
+        const elementoSelecionado = this.elemento();
+        elementoSelecionado.classList.add('ativar');
+        // ou assim: this.element().classList.add('ativar');
+    }
+}
 
-// Dom.seletor = "ul";
-// Dom.ativar();
+Dom.seletor = "ul";
+Dom.ativar();
 
-// // usar função construtora
-// function Dom2(seletor) {
-//     //this.seletor = "li"
-//     this.elemento = function() {
-//         return document.querySelector(seletor);
-//     }
-//     this.ativar = function() {
-//         const elementoSelecionado = this.elemento();
-//         elementoSelecionado.classList.add('ativar');
-//     }
-// }
-// const li = new Dom2('li');
-// const ul = new Dom2('ul');
+// usar função construtora
+function Dom2(seletor) {
+    //this.seletor = "li"
+    this.elemento = function() {
+        return document.querySelector(seletor);
+    }
+    this.ativar = function() {
+        const elementoSelecionado = this.elemento();
+        elementoSelecionado.classList.add('ativar');
+    }
+}
+const li = new Dom2('li');
+const ul = new Dom2('ul');
 
-// // passando parâmetros
+// passando parâmetros
 
-// function Dom3(seletor) {
-//     this.elemento = function() {
-//         document.querySelector(seletor)
-//     },
-//     this.ativar = function(classe) {
-//         this.elemento().classList.add(classe)
-//     }
-// }
+function Dom3(seletor) {
+    this.elemento = function() {
+        document.querySelector(seletor)
+    },
+    this.ativar = function(classe) {
+        this.elemento().classList.add(classe)
+    }
+}
 
-// const body = new Dom3('body');
-// body.ativar('parametro1_classe')
+const body = new Dom3('body');
+body.ativar('parametro1_classe')
 
 // exercicios
 
