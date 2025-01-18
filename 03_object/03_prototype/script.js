@@ -70,3 +70,41 @@ console.log(carro.andar.constructor) // Function()
 console.log(carro.andar.constructor.name) // function
 console.log(carro.andar().constructor.name) // boolean
 
+//exercicios
+
+// Crie uma função construtora de Pessoas
+// Deve conter nome, sobrenome e idade
+// Crie um método no protótipo que retorne
+// o nome completo da pessoa
+
+function Pessoa2(nome, sobrenome, idade) {
+    this.nome = nome,
+    this.sobrenome = sobrenome,
+    this.idade = idade
+    this.imprimir = function() {
+        return 'Pessoa com Nome completo: ' + this.nome + " " + this.sobrenome
+    }
+}
+
+const paulo = new Pessoa2('Paulo', 'Alves', 63)
+console.log(paulo)
+console.log(paulo.imprimir())
+
+
+// Liste os métodos acessados por 
+// dados criados com NodeList,
+// HTMLCollection, Document
+
+// Liste os construtores dos dados abaixo
+const li = document.querySelector('li');
+
+li;
+li.click;
+li.innerText;
+li.value;
+li.hidden;
+li.offsetLeft;
+li.click();
+
+// Qual o construtor do dado abaixo:
+li.hidden.constructor.name;
