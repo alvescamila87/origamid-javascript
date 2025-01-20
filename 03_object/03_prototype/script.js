@@ -89,22 +89,50 @@ function Pessoa2(nome, sobrenome, idade) {
 const paulo = new Pessoa2('Paulo', 'Alves', 63)
 console.log(paulo)
 console.log(paulo.imprimir())
+Pessoa2.prototype.imprimirCompleto = function() {
+    return this.nome + " " + this.sobrenome + " com: " + this.idade + " anos de idade"
+}
+
+console.log(paulo.imprimirCompleto())
 
 
 // Liste os métodos acessados por 
 // dados criados com NodeList,
 // HTMLCollection, Document
 
+// Nodelist.prototype
+// HTMLCollection.prototype
+
+// Object.getOwnPropertyNames(Nodelist.prototype)
+// Object.getOwnPropertyNames(HTMLCollection.prototype)
+// Object.getOwnPropertyNames(Document.prototype)
+
+
 // Liste os construtores dos dados abaixo
 const li = document.querySelector('li');
 
-li;
-li.click;
-li.innerText;
-li.value;
-li.hidden;
-li.offsetLeft;
-li.click();
+li; // HTMLElement
+li.click; //Function
+li.innerText; // String
+li.value; //Number
+li.hidden; //Boolean
+li.offsetLeft; //Number
+li.click(); //undefined (não retorna nada)
+
+
+console.log("Teste: ", li.constructor.name)
+li.clientHeight
+
+li.constructor.name
+li.click.constructor.name
+li.innerText.constructor.name
+li.value.constructor.name
+li.hidden.constructor.name
+li.offsetLeft.constructor.name
+
 
 // Qual o construtor do dado abaixo:
-li.hidden.constructor.name;
+li.hidden.constructor.name; //String
+const teste = li.hidden.constructor.name
+console.log(teste) // boolean
+teste.constructor.name
