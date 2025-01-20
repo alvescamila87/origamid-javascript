@@ -135,4 +135,4 @@ li.offsetLeft.constructor.name
 li.hidden.constructor.name; //String
 const teste = li.hidden.constructor.name
 console.log(teste) // boolean
-teste.constructor.name
+teste.constructor.name //String 
