@@ -46,3 +46,43 @@ const listaPrecos = ['R$ 99', 'R$ 999', 'R$ 9999', ]
 listaPrecos.forEach(preco => {
     console.log(preco.padStart(10, '-'))
 })
+
+//repeat
+const ta = "ta"
+console.log(ta.repeat(5))
+
+//replace
+let listaItens = "Celular Phone Carregador Suporte"
+listaItens = listaItens.replace("Celular", "Smartphone")
+//listaItens = listaItens.replace(" ", ", ")
+listaItens = listaItens.replace(/[ ]+/g, ", ")
+console.log(listaItens)
+
+//split
+const arrayLista = listaItens.split(", ")
+console.log(arrayLista)
+
+const listaItens2 = 'Camisas Bonés Calças Bermudas Vestidos Saias';
+const arrayItens = listaItens2.split(' ');
+
+const htmlText = '<div>O melhor item</div><div>A melhor lista</div>';
+const htmlArray = htmlText.split('div'); // quebra exatamente na palavra
+//console.log(htmlText)
+console.log(htmlArray)
+
+const htmlNovo = htmlArray.join('section');
+console.log(htmlNovo)
+
+//upper lower
+const sexo1 = 'Feminino'
+const sexo2 = 'feminino'
+const sexo3 = 'FEMININO'
+
+console.log(sexo1.toUpperCase() === 'FEMININO')
+
+//trim trimStart trimEnd
+const valor = ' R$ 25.00 '
+console.log(valor.trim())    
+console.log(valor.trimStart())    
+console.log(valor.trimEnd())    
+
