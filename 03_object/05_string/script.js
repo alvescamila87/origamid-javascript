@@ -86,3 +86,92 @@ console.log(valor.trim())
 console.log(valor.trimStart())    
 console.log(valor.trimEnd())    
 
+// exercicios
+
+// Utilizando o foreach na array abaixo,
+// some os valores de Taxa e os valores de Recebimento
+
+const transacoes = [
+    {
+      descricao: 'Taxa do Pão',
+      valor: 'R$ 39',
+    },
+    {
+      descricao: 'Taxa do Mercado',
+      valor: 'R$ 129',
+    },
+    {
+      descricao: 'Recebimento de Cliente',
+      valor: 'R$ 99',
+    },
+    {
+      descricao: 'Taxa do Banco',
+      valor: 'R$ 129',
+    },
+    {
+      descricao: 'Recebimento de Cliente',
+      valor: 'R$ 49',
+    },
+  ];
+
+  let taxaTotal = 0;
+  let recebimentoTotal = 0;
+  transacoes.forEach(transacao => {
+    //console.log(transacao.descricao.slice(0, 4))
+    //console.log(transacao.descricao.includes("Taxa"))
+    const numeroLimpo = +transacao.valor.replace("R$ ", "");
+    //console.log(numeroLimpo)
+    if(transacao.descricao.slice(0,4) === "Taxa") {
+        taxaTotal += numeroLimpo;
+    } else if (transacao.descricao.slice(0,4) === "Rece") {     
+        recebimentoTotal += numeroLimpo;
+    }
+        
+  })
+  console.log(taxaTotal)
+  console.log(recebimentoTotal)
+
+  // Retorne uma array com a lista abaixo
+  const transportes = 'Carro;Avião;Trem;Ônibus;Bicicleta';
+  let arrayListaTransportes = transportes.split(";")
+  console.log(arrayListaTransportes)
+  
+  // Substitua todos os span's por a's
+  const html = `<ul>
+                  <li><span>Sobre</span></li>
+                  <li><span>Produtos</span></li>
+                  <li><span>Contato</span></li>
+                </ul>`;
+
+let htmlFormatado = html.split("span").join("a")
+console.log(htmlFormatado)
+  
+  // Retorne o último caracter da frase
+const frase10 = 'Melhor do ano!';
+console.log("última letra: ", frase10[frase10.length -1])
+console.log("última letra: ", frase10.slice(-1))
+  
+  // Retorne o total de taxas (quantos itens são taxas)
+  const transacoes3 = ['Taxa do Banco', '   TAXA DO PÃO', '  taxa do mercado', 'depósito Bancário', 'TARIFA especial'];
+
+  let totalItens = 0;
+  transacoes3.forEach(item => {
+    //console.log(item.slice(0,3).toLowerCase())
+    /**
+     * ou assim:
+     * item = item.toLowerCase();
+     * item = item.trim();
+     * item = item.slice(0,4);
+     * 
+     * if(item === "taxa") {
+     * totalItens++}
+     */
+
+    if(item.toLowerCase().trimStart().trimEnd().slice(0,3) === "tax") {
+        totalItens += 1;
+    }
+  })
+  
+  console.log("Total de itens: ", totalItens)
+  
+  
