@@ -102,10 +102,28 @@ function limparPrecos(preco) {
 
 let somaTotal = 0;
 listaPrecos.forEach(item => {
-  //console.log("Preco da lista 2: ", somaTotal += item)
+  //console.log("Lista preco 1:", somaTotal += item)
   somaTotal += limparPrecos(item)
 })
 
 console.log("Total da soma: ", somaTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL'}));
 
 limparPrecos(listaPrecos[1]);
+
+const listaPrecos2 = ['R$ 129,782', ' R$ 24861,611',
+  'R$ 6587  ', 'r$  741,35', 'r$  625,35'];
+
+  function limpaPrecos2(preco) {
+    preco = +preco.toUpperCase().replace("R$", "").trim().replace(",", ".");
+    preco = +preco.toFixed(2)
+    //console.log("Lista preco 2: ", preco )
+    
+    return preco;
+  }
+  
+let somaTotal2 = 0;
+listaPrecos2.forEach(precoDaLista2 => console.log(somaTotal2 += limpaPrecos2(precoDaLista2)))
+
+console.log("Soma 2: ", somaTotal2.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL'}))
+
+limpaPrecos2(listaPrecos2[0])
