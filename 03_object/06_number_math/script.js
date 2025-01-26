@@ -22,8 +22,8 @@ console.log("Forma 2 - Converter string para number:", parseFloat(valorString))
 console.log("Forma 3 - Converter string para number:", valorString * 1)
 
 //toFixed (retorna string, não number)
-const preco = 2.99
-console.log(preco.toFixed())
+const preco1 = 2.99
+console.log(preco1.toFixed())
 
 const carro = 75.455
 console.log(carro.toFixed(2))
@@ -79,8 +79,10 @@ console.log(aleatorio2)
 
 // Retorne o maior número da lista abaixo
 const numeros = '4, 5, 20, 8, 9';
-let listaNumeros = numeros.replaceAll(", ", " ")
-console.log("Numeros: ", listaNumeros)
+const arrayNumeros = numeros.split(", ")
+console.log("Numeros: ", arrayNumeros)
+const maxNumber = Math.max(...arrayNumeros); //Math.max(arrayNumeros[0], arrayNumeros[1], ... );
+console.log("Maior número do array: ", maxNumber)
 
 
 // Crie uma função para limpar os preços
@@ -90,16 +92,20 @@ const listaPrecos = ['R$ 59,99', ' R$ 100,222',
                      'R$ 230  ', 'r$  200'];
 
 
-// listaPrecos.map(preco => {
-//   if(preco.slice(0,3).toLowerCase() === 'r$'){
-//     console.log(preco.replace("R$ ", ""))
-//   } else if (preco.slice(0,3).toLowerCase().trimStart() === 'r$') {
-//     console.log(preco.replace("R$ ", ""))
-//   }
-// })
+function limparPrecos(preco) {
+  preco = +preco.toUpperCase().replace("R$", "").trim().replace(",", ".");
+  preco = +preco.toFixed(2)
+  console.log("Preco da lista: ", preco)
 
-
-function limparPrecos(valorOriginal) {
-  const valorLimpo = valorOriginal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
-  
+  return preco;  
 }
+
+let somaTotal = 0;
+listaPrecos.forEach(item => {
+  //console.log("Preco da lista 2: ", somaTotal += item)
+  somaTotal += limparPrecos(item)
+})
+
+console.log("Total da soma: ", somaTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL'}));
+
+limparPrecos(listaPrecos[1]);
