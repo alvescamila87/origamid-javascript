@@ -41,4 +41,3 @@ new Array(5); // [,,,,]
 Array(5); // [,,,,]
 Array(1,2,3,4); // [1,2,3,4]
 
-Array.of('Teste', 'Teste 2')
