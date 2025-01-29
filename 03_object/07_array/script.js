@@ -85,7 +85,9 @@ console.log(instrumentos2.sort());
 const idades = [32,21,33,43,1,12,8];
 console.log(idades.sort()) //não funciona -> [1, 12, 21, 32, 33, 43, 8]
 
-//[].unshift() e [].push() -> retorna o length - MODIFICA ARRAY ORIGINAL
+//[].unshift() e [].push() - MODIFICA ARRAY ORIGINAL
+//[].unshift() adiciona elementos ao início da array e retorna o length da mesma. 
+//[].push() adiciona elementos ao final da array e retorna o length da mesma.
 const carros2 = ['Ford', 'Fiat', 'VW'];
 carros2.unshift('Honda', 'Kia'); // 5
 carros2; // ['Honda', 'Kia', 'Ford', 'Fiat', 'VW'];
@@ -93,7 +95,9 @@ carros2; // ['Honda', 'Kia', 'Ford', 'Fiat', 'VW'];
 carros2.push('Ferrari'); // 6
 carros2; // ['Honda', 'Kia', 'Ford', 'Fiat', 'VW', 'Ferrari'];
 
-//[].shift() e [].pop() -> retorna o array - MODIFICA ARRAY ORIGINAL
+//[].shift() e [].pop() - MODIFICA ARRAY ORIGINAL
+//[].shift():  remove o primeiro elemento da array e retorna o mesmo.
+//[].pop() remove o último elemento da array e retorna o mesmo.
 const carros3 = ['Ford', 'Fiat', 'VW', 'Honda'];
 const primeiroCarro = carros3.shift(); // 'Ford'
 carros3; // ['Fiat', 'VW', 'Honda'];
@@ -162,3 +166,39 @@ console.log(linguagens4.pop())
 console.log(linguagens4)  //['html', 'css', 'js', 'php']
 console.log(clonelinguagens4) // ['html', 'css', 'js', 'php', 'python']
 
+// exercicios:
+
+const comidas = ['Pizza', 'Frango', 'Carne', 'Macarrão'];
+// Remova o primeiro valor de comidas e coloque em uma variável
+const comidas2 = comidas.shift();
+console.log(comidas) // ['Frango', 'Carne', 'Macarrão']
+console.log(comidas2) // 'Pizza'
+
+// Remova o último valor de comidas e coloque em uma variável
+const comidas3 = comidas.pop();
+console.log(comidas) // ['Frango', 'Carne']
+console.log(comidas3) // 'Macarrão'
+
+// Adicione 'Arroz' ao final da array
+comidas.push('Arroz')
+
+// Adicione 'Peixe' e 'Batata' ao início da array
+comidas.unshift('Peixe', 'Batata')
+
+const estudantes = ['Marcio', 'Brenda', 'Joana', 'Kleber', 'Julia'];
+// Arrume os estudantes em ordem alfabética
+// Inverta a ordem dos estudantes
+// Verifique se Joana faz parte dos estudantes
+// Verifique se Juliana faz parte dos estudantes
+
+let html = `<section>
+              <div>Sobre</div>
+              <div>Produtos</div>
+              <div>Contato</div>
+            </section>`
+// Substitua section por ul e div com li,
+// utilizando split e join
+
+const carros7 = ['Ford', 'Fiat', 'VW', 'Honda'];
+// Remova o último carro, mas antes de remover
+// salve a array original em outra variável
