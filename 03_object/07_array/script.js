@@ -14,6 +14,31 @@ carros[20] = 'Ferrari'
 console.log(carros)
 console.log(carros.length)
 
+//desestruturar array
+//forma 1
+const arrayItensDiferentes = [{nome: 'Camila', idade: 37}, {marca:'VW', modelo: 'Fusca'}]
+const [pessoa, carro] = arrayItensDiferentes;
+pessoa.nome;
+pessoa.nomidade;
+carro.marca;
+carro.modelo;
+
+//forma 2
+const arrayItensIguais = [{nome: 'Camila', idade: 37}, {nome: 'Zebedeu', idade: 20}, {nome: 'Madalena', idade: 18}]
+const [pessoa1, pessoa2, pessoa3] = arrayItensIguais;
+pessoa1.nome;
+pessoa1.idade;
+pessoa2.nome;
+pessoa2.idade;
+pessoa3.nome;
+pessoa3.idade;
+
+//forma 3
+const arrayItensIguais2 = [{nome: 'Camila', idade: 37}, {nome: 'Zebedeu', idade: 20}, {nome: 'Madalena', idade: 18}]
+const [pessoaLista1, ...a] = arrayItensIguais2;
+pessoaLista1.nome;
+pessoaLista1.idade
+console.log(a.nome, a.idade);
 
 // Array from:
 const listaLis = document.querySelectorAll('li')
@@ -50,7 +75,8 @@ frutas[1].length // 4 letras de pera
 frutas[2].length // 2 itens dentro do array
 frutas[2][0].length // 6 letras em uva rota de dentro do array
 
-// mutator methods: retorna valor e altera array original
+// mutator methods: 
+// métodos modificadores: [].sort() - MODIFICA ARRAY ORIGINAL
 // não funciona para array de numbers
 
 const instrumentos2 = ['Guitarra', 'Baixo', 'Violão', 'Amplificador', 'Microfone']
@@ -59,7 +85,7 @@ console.log(instrumentos2.sort());
 const idades = [32,21,33,43,1,12,8];
 console.log(idades.sort()) //não funciona -> [1, 12, 21, 32, 33, 43, 8]
 
-//[].unshift() e [].push() -> retorna o length
+//[].unshift() e [].push() -> retorna o length - MODIFICA ARRAY ORIGINAL
 const carros2 = ['Ford', 'Fiat', 'VW'];
 carros2.unshift('Honda', 'Kia'); // 5
 carros2; // ['Honda', 'Kia', 'Ford', 'Fiat', 'VW'];
@@ -67,7 +93,7 @@ carros2; // ['Honda', 'Kia', 'Ford', 'Fiat', 'VW'];
 carros2.push('Ferrari'); // 6
 carros2; // ['Honda', 'Kia', 'Ford', 'Fiat', 'VW', 'Ferrari'];
 
-//[].shift() e [].pop() -> retorna o array
+//[].shift() e [].pop() -> retorna o array - MODIFICA ARRAY ORIGINAL
 const carros3 = ['Ford', 'Fiat', 'VW', 'Honda'];
 const primeiroCarro = carros3.shift(); // 'Ford'
 carros3; // ['Fiat', 'VW', 'Honda'];
@@ -75,6 +101,64 @@ carros3; // ['Fiat', 'VW', 'Honda'];
 const ultimoCarro = carros3.pop(); // 'Honda'
 carros3; // ['Fiat', 'VW'];
 
-//[].reverse() -> retorna nova array
-const carros = ['Ford', 'Fiat', 'VW', 'Honda'];
-carros.reverse(); // ['Honda', 'VW', 'Fiat', 'Ford'];
+//[].reverse() -> retorna nova array - MODIFICA ARRAY ORIGINAL
+const carros5 = ['Ford', 'Fiat', 'VW', 'Honda'];
+carros5.reverse(); // ['Honda', 'VW', 'Fiat', 'Ford'];
+
+//[].splice() - MODIFICA ARRAY ORIGINAL
+const carros6 = ['Ford', 'Fiat', 'VW', 'Honda']; 
+carros6.splice(1, 0, 'Kia', 'Mustang'); // []
+carros6; // ['Ford', 'Kia', 'Mustang', 'Fiat', 'VW', 'Honda']
+
+carros6.splice(3, 2, 'Ferrari'); // ['Fiat', 'VW']
+carros6; // ['Ford', 'Kia', 'Mustang', 'Ferrari', 'Honda']
+
+//[].copyWithin() - MODIFICA ARRAY ORIGINAL
+['Item1', 'Item2', 'Item3', 'Item4'].copyWithin(2, 0, 3);
+// ['Item1', 'Item2', 'Item1', 'Item2']
+
+['Item1', 'Item2', 'Item3', 'Item4'].copyWithin(-1);
+// ['Item1', 'Item2', 'Item3', 'Item1']
+
+//métodos de Acesso [].concat() - NÃO modifica array original
+
+const transportes1 = ['Barco', 'Aviao'];
+const transportes2 = ['Carro', 'Moto'];
+const transportes = transportes1.concat(transportes2);
+console.log(transportes)
+
+const transportes4 = [].concat(transportes1, transportes2, 'Van')
+console.log(transportes4)
+transportes4.concat(transportes1, transportes2, '1478', 'dsffsdfs')
+console.log(transportes4)
+
+//[].includes(), [].indexOf() e [].lastIndexOf()- NÃO modifica array original
+const linguagens = ['html', 'css', 'js', 'php', 'python', 'js'];
+console.log(linguagens.includes('java'))
+console.log(linguagens.includes(`python`))
+console.log(linguagens.indexOf(`js`))
+console.log(linguagens.lastIndexOf(`js`))
+
+//[].join() - NÃO modifica array original
+const linguagens2 = ['html', 'css', 'js', 'php', 'python'];
+linguagens2.join(); // 'html,css,js,php,python'
+linguagens2.join(' '); // 'html css js php python'
+linguagens2.join('-_-'); // 'html-_-css-_-js-_-php-_-python'
+
+let htmlString = '<h2>Título Principal</h2>'
+htmlString = htmlString.split('h2');
+// ['<', '>Título Principal</', '>']
+htmlString = htmlString.join('h1');
+// <h1>Título Principal</h1>
+
+
+//[].slice() - NÃO modifica array original
+const linguagens4 = ['html', 'css', 'js', 'php', 'python'];
+linguagens4.slice(3); // ['php', 'python']
+linguagens4.slice(1, 4); // ['css', 'js', 'php']
+
+const clonelinguagens4 = linguagens4.slice();
+console.log(linguagens4.pop())
+console.log(linguagens4)  //['html', 'css', 'js', 'php']
+console.log(clonelinguagens4) // ['html', 'css', 'js', 'php', 'python']
+
