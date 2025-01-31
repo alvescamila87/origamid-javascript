@@ -187,9 +187,14 @@ comidas.unshift('Peixe', 'Batata')
 
 const estudantes = ['Marcio', 'Brenda', 'Joana', 'Kleber', 'Julia'];
 // Arrume os estudantes em ordem alfabética
+estudantes.sort()
+
 // Inverta a ordem dos estudantes
+estudantes.reverse()
 // Verifique se Joana faz parte dos estudantes
+estudantes.includes('Joana')
 // Verifique se Juliana faz parte dos estudantes
+estudantes.includes('Juliana')
 
 let html = `<section>
               <div>Sobre</div>
@@ -198,7 +203,13 @@ let html = `<section>
             </section>`
 // Substitua section por ul e div com li,
 // utilizando split e join
+html.split('section').join('ul')
+html.split('div').join('li')
 
 const carros7 = ['Ford', 'Fiat', 'VW', 'Honda'];
 // Remova o último carro, mas antes de remover
 // salve a array original em outra variável
+const carros8 = carros7.slice();
+console.log("Carros 8: ", carros8)
+carros7.pop()
+console.log('Carros 7', carros7)
