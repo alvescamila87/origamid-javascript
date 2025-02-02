@@ -55,8 +55,15 @@ console.log(tempoAulas)
 
 // para somar é o reduce
 // soma começa em 0 (valor inicial passado como segundo argumento do .reduce()).
-const tempoAulas2 = aulas.reduce((soma, aula) => soma += aula.min, 0)
-console.log(tempoAulas2)
+const tempoAulas2 = aulas.reduce((acumulador, item) => {
+  return acumulador + item.min
+})
+console.log("Tempo 2: ", tempoAulas2)
+
+const tempoAulas3 = aulas.reduce((acumulador, item) => {
+  return acumulador + item.min
+}, 0)
+console.log("Tempo 3: ", tempoAulas3)
 
 // Forma 1 - array de nomes de aula
 
@@ -82,8 +89,97 @@ const nomeAulas2 = function(aula) { // obrigatoriamente aulas precisa ser um obj
   return aula.nome 
 }
 
+const arrayNomeAulas3 = aulas.map(nomeAulas2)
+
+console.log(arrayNomeAulas3)
+
 // Forma 4 - array de nomes de aula
 
 const nomesAula3 = aula => aula.nome;
 
+const arrayNomeAulas4 = aulas.map(nomesAula3)
 
+console.log(arrayNomeAulas3)
+
+
+const alunos = [
+  {
+    nome: 'Maria',
+    idade: 15
+  },
+  {
+    nome: 'João',
+    idade: 10
+  },
+  {
+    nome: 'Zebedeu',
+    idade: 20
+  },
+  {
+    nome: 'Madalena',
+    idade: 25
+  },
+]
+
+// Forma 1
+
+function retornaNomeAluno1(aluno) {
+  return aluno.nome
+}
+
+const imprimeListaAlunos1 = alunos.map(retornaNomeAluno1)
+console.log(imprimeListaAlunos1)
+
+// Forma 2
+
+const imprimeListaAlunos2 = alunos.map(function(aluno) {
+  return aluno.nome
+})
+console.log(imprimeListaAlunos2)
+
+// Forma 3
+
+const retornaNomeAluno3 = aluno => aluno.nome
+const imprimeListaAlunos3 = alunos.map(retornaNomeAluno3)
+console.log(imprimeListaAlunos3)
+
+// Forma 4 
+
+const retornaNomeAluno4 = function(aluno) {
+  return aluno.nome
+}
+
+const imprimeListaAlunos4 = alunos.map(retornaNomeAluno4)
+console.log(imprimeListaAlunos4)
+
+
+// [].reduce() => retorna undefined
+// callback(acumulador, item, index, array)
+// valorInicial: 0
+
+const horaAula = [10, 25, 30]
+const totalHoraAula1 = horaAula.reduce((acumulador, item, index, array) => {
+  //console.log(acumulador, item, index, array)
+  console.log(acumulador, item, index)
+  return acumulador + item
+}, 0)
+
+/* como acontece o processo:
+
+const aulas = [10, 25, 30];
+
+// 1
+aulas.reduce((0, 10) => {
+  return 0 + 10;
+}, 0); // retorna 10
+
+// 2
+aulas.reduce((10, 25) => {
+  return 10 + 25;
+}, 0); // retorna 35
+
+// 3
+aulas.reduce((35, 30) => {
+  return 35 + 30;
+}, 0); // retorna 65
+*/
