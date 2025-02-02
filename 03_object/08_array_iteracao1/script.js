@@ -223,3 +223,29 @@ const listaAulas2 = aulas2.reduce((acumulador, item, index) => {
 }, {}) // no lugar do zero, colocar um objeto vazio
 
 console.log(listaAulas2)
+
+/*
+// 1
+aulas.reduce(({}, {nome: 'HTML 1', min: 15}, 0) => {
+  {}[0] = 'HTML 1';
+  return {0: 'HTML 1'};
+}, {})
+
+// 2
+aulas.reduce(({0: 'HTML 1'}, {nome: 'HTML 2', min: 10}, 1) => {
+  {0: 'HTML 1'}[1] = 'HTML 2';
+  return {0: 'HTML 1', 1: 'HTML 2'};
+}, {})
+
+// 3
+aulas.reduce(({0: 'HTML 1', 1: 'HTML 2'}, {nome: 'CSS 1', min: 20}, 2) => {
+  {0: 'HTML 1', 1: 'HTML 2'}[2] = 'CSS 1';
+  return {0: 'HTML 1', 1: 'HTML 2', 2: 'CSS 1'};
+}, {})
+
+// 4
+aulas.reduce(({0: 'HTML 1', 1: 'HTML 2', 2: 'CSS 1'}, {nome: 'JS 1', min: 25}, 3) => {
+  {0: 'HTML 1', 1: 'HTML 2', 2: 'CSS 1'}[3] = 'JS 1';
+  return {0: 'HTML 1', 1: 'HTML 2', 2: 'CSS 1', 3: 'JS 1'};
+}, {})
+*/
