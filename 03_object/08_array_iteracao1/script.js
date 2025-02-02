@@ -183,3 +183,43 @@ aulas.reduce((35, 30) => {
   return 35 + 30;
 }, 0); // retorna 65
 */
+
+const listaNumeros = [2, 50, 100, 999, 25, 13, 10, 11, 70, 29, 14, 20]
+
+const maiorNumero = listaNumeros.reduce((valorAnterior, valorAtual) => {
+  //if(valorAnterior > valorAtual) return valorAnterior;
+  //return valorAtual;
+
+  return valorAnterior > valorAtual ? valorAnterior : valorAtual
+  
+}, 0)
+
+console.log(maiorNumero)
+
+// usar o reduce para lista o array com o nome das aulas
+
+const aulas2 = [
+  {
+    nome: 'HTML',
+    min: 15
+  },
+  {
+    nome: 'Java',
+    min: 10
+  },
+  {
+    nome: 'Python',
+    min: 20
+  },
+  {
+    nome: 'JS',
+    min: 25
+  },
+]
+
+const listaAulas2 = aulas2.reduce((acumulador, item, index) => {
+  acumulador[index] = item.nome
+  return acumulador;
+}, {}) // no lugar do zero, colocar um objeto vazio
+
+console.log(listaAulas2)
