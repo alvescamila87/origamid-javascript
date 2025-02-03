@@ -249,3 +249,39 @@ aulas.reduce(({0: 'HTML 1', 1: 'HTML 2', 2: 'CSS 1'}, {nome: 'JS 1', min: 25}, 3
   return {0: 'HTML 1', 1: 'HTML 2', 2: 'CSS 1', 3: 'JS 1'};
 }, {})
 */
+
+// [].some() => retorna boolean 
+// procura o 1º truthy
+
+const frutas = ['Uva', 'Abacate', 'Mamão', 'Banana', 'Laranja']
+
+const temLaranja = frutas.some(item => {
+  //console.log(item)
+  return item === 'Laranja'
+})
+
+console.log(temLaranja) //true: tem laranja no array
+
+// [].every() => retorna boolean 
+// procura o 1º falsy
+
+
+const todosSaoLaranja = frutas.every(item => {
+  return item === "Laranja"
+})
+
+console.log(todosSaoLaranja) //false: só um item é laranja no array, não todos
+
+const frutas2 = ['Uva', '', 'Mamão', 'Banana', 'Laranja', undefined, null, false]
+
+const temFalsyEmFrutas = frutas2.every(item => {
+  return item
+})
+
+console.log(temFalsyEmFrutas) // no frutas2 a string vazia é falsy, então retorna false
+
+const numerosListados = [6, 7, 8, 9, 10, 13, 15, 20, 33, 100]
+
+const valorMaiorQue13 = numerosListados.every(item => item > 13)
+
+console.log(valorMaiorQue13) // false, pois encontrou números no array que não são maior que 13
