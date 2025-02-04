@@ -304,3 +304,10 @@ const frutas4 = ['Uva', 'Abacate', 'Mamão', 'Banana', 'Laranja']
 const indexBanana = frutas4.findIndex(item => item === "Banana");
 
 console.log(indexBanana)
+
+// [].filter() => retorna um array com todos os itens truthys
+const frutas5 = ['Uva', '', 'Mamão', 'Banana', 'Laranja', undefined, null, false, true, " ", 0]
+
+const listaDeFrutasExistentes = frutas5.filter(item => item)
+
+console.log(listaDeFrutasExistentes)
