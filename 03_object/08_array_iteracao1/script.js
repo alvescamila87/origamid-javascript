@@ -285,3 +285,22 @@ const numerosListados = [6, 7, 8, 9, 10, 13, 15, 20, 33, 100]
 const valorMaiorQue13 = numerosListados.every(item => item > 13)
 
 console.log(valorMaiorQue13) // false, pois encontrou números no array que não são maior que 13
+
+
+// [].find() =>  retorna o item do 1ª truthy do array
+
+const frutas3 = ['', 'Abacate', 'Mamão', 'Banana', 'Laranja']
+
+const itemBanana = frutas3.find(item => {
+  return item === "Banana";
+})
+
+console.log(itemBanana)
+
+// [].findIndex() => retorna o index do item do 1ª truthy do array
+
+const frutas4 = ['Uva', 'Abacate', 'Mamão', 'Banana', 'Laranja']
+
+const indexBanana = frutas4.findIndex(item => item === "Banana");
+
+console.log(indexBanana)
