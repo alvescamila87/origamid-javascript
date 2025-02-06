@@ -355,16 +355,27 @@ console.log(arrayCursos)
 
 const objCursos = arrayCursos.map(item => {
   //console.log(item)
+  const titulo = item.querySelector('h1').innerText;
+  const descricao = item.querySelector('p').innerText;
+  const aula = item.querySelector('.aulas').innerText;
+  const hora = item.querySelector('.horas').innerText;
+
   return {
-    aula: 'Teste'
+    titulo,
+    descricao,
+    aula,
+    hora: +hora
   }
 })
 console.log(objCursos)
 
 
-// // Retorne uma lista com os
-// // números maiores que 100
-// const numeros = [3, 44, 333, 23, 122, 322, 33];
+// Retorne uma lista com os
+// números maiores que 100
+const numeros5 = [3, 44, 333, 23, 122, 322, 33];
+
+const maiorQue100 = numeros5.filter(item => item > 100)
+console.log(maiorQue100)
 
 
 // // Verifique se Baixo faz parte
