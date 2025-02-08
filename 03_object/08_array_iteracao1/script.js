@@ -378,31 +378,41 @@ const maiorQue100 = numeros5.filter(item => item > 100)
 console.log(maiorQue100)
 
 
-// // Verifique se Baixo faz parte
-// // da lista de instrumentos e retorne true
-// const instrumentos = ['Guitarra', 'Baixo', 'Bateria', 'Teclado']
+// Verifique se Baixo faz parte
+// da lista de instrumentos e retorne true
+const instrumentos = ['Guitarra', 'Baixo', 'Bateria', 'Teclado']
+console.log(instrumentos.includes('Baixo'))
 
 
-// // Retorne o valor total das compras
-// const compras = [
-//   {
-//     item: 'Banana',
-//     preco: 'R$ 4,99'
-//   },
-//   {
-//     item: 'Ovo',
-//     preco: 'R$ 2,99'
-//   },
-//   {
-//     item: 'Carne',
-//     preco: 'R$ 25,49'
-//   },
-//   {
-//     item: 'Refrigerante',
-//     preco: 'R$ 5,35'
-//   },
-//   {
-//     item: 'Quejo',
-//     preco: 'R$ 10,60'
-//   }
-// ]
+// Retorne o valor total das compras
+const compras = [
+  {
+    produto: 'Banana',
+    preco: 'R$ 4,99'
+  },
+  {
+    produto: 'Ovo',
+    preco: 'R$ 2,99'
+  },
+  {
+    produto: 'Carne',
+    preco: 'R$ 25,49'
+  },
+  {
+    produto: 'Refrigerante',
+    preco: 'R$ 5,35'
+  },
+  {
+    produto: 'Quejo',
+    preco: 'R$ 10,60'
+  }
+]
+
+const valores = compras.reduce((acumulador, item) => {
+  const precoLimpo = +item.preco.replace("R$ ", "").replace(",", ".").trim()
+  // const precoLimpo = parseFloar(item.preco.replace("R$ ", "").replace(",", ".").trim()); FORMA ALTERNATIVA
+  return acumulador + precoLimpo
+}, 0)
+
+console.log("Valor total R$", valores)
+
