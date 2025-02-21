@@ -51,12 +51,32 @@ function consultaAPI() {
 
 setInterval(() => {
   consultaAPI()
-}, 1000 * 30)
+}, 500)
 
-//setInterval(consultaAPI, 500)
+//setInterval(consultaAPI, 1000*30)
 //consultaAPI()
 
 
 // Utilizando a API https://api.chucknorris.io/jokes/random
 // retorne uma piada randomica do chucknorris, toda vez que
 // clicar em próxima
+
+const piadaParagrafo = document.querySelector('.piada')
+const btnProxima = document.querySelector('.btnProxima')
+console.log(piadaParagrafo)
+console.log(btnProxima)
+
+function consultaPiada() {
+  fetch('https://api.chucknorris.io/jokes/random')
+  .then(response => response.json())
+  .then(body => {    
+    console.log(body)
+    piadaParagrafo.innerText = body.value
+  })
+}
+
+//consultaPiada()
+
+btnProxima.addEventListener('click', consultaPiada)
+
+
