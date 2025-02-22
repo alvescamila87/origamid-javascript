@@ -79,4 +79,39 @@ function consultaPiada() {
 
 btnProxima.addEventListener('click', consultaPiada)
 
+//Buscar a previsão do tempo para uma cidade
 
+const previsaoContent = document.querySelector('.previsaoContent')
+console.log(previsaoContent)
+
+function consultaPrevisao() {
+  fetch('https://api.open-meteo.com/v1/forecast?latitude=-23.55&longitude=-46.63&current_weather=true')
+  .then(response => response.json())
+  .then(body => {
+    previsaoContent.innerText = body.current_weather.temperature + " Cº"   
+    //console.log(body)
+  })
+}
+
+setInterval(() => {
+  consultaPrevisao()
+}, 1000)
+
+
+//Gerar uma imagem aleatória de cachorro
+
+const randomImage = document.getElementById('randomImage')
+console.log(randomImage)
+
+function consultaImagem() {
+  fetch('https://dog.ceo/api/breeds/image/random')
+  .then(response => response.json())
+  .then(body => {
+    randomImage.src = body.message;
+    console.log(body)
+  })
+} 
+
+setInterval(() => {
+  consultaImagem()
+}, 1000)
